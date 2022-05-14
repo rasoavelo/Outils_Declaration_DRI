@@ -1,0 +1,51 @@
+extends layout 
+
+block content 
+    if listes 
+        h1 Liste de la declaration d'achat immobilier
+        table 
+            thead 
+                tr
+                    th nif
+                    th nuStat 
+                    th cin 
+                    th dateCin 
+                    th lieuDeliv 
+                    th nature 
+                    th reference 
+                    th raisonSocial 
+                    th adresse
+                    th pays  
+                    th ville 
+                    th exProvince 
+                    th mode de paiement
+                    th nature des marchadises
+                    th montant hors tva
+                    th tva
+                    th Action
+            tbody        
+                for liste in listes 
+                    tr 
+                        td=liste.nif
+                        td=liste.numStat
+                        td=liste.cin
+                        td=liste.dateCin
+                        td=liste.lieuDeliv
+                        td=liste.nature
+                        td=liste.reference
+                        td=liste.raisonSocial
+                        td=liste.adresse
+                        td=liste.pays
+                        td=liste.ville
+                        td=liste.exProv
+                        td=liste.modePaiem
+                        td=liste.natureMarch
+                        td=liste.montantHorsTva
+                        td=liste.tva
+                        td 
+                            a(href="/marchandises_vendues/modifierMV/" + liste.id) Modifier 
+                            a(href="/marchandises_vendues/supprimerMV/" + liste.id) Supprimer
+
+
+
+

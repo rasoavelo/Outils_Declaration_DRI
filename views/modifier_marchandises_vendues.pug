@@ -1,0 +1,29 @@
+extends layout 
+
+block content 
+    h1 Modification de la declaration d'achat immobilier
+    form(action="/marchandises_vendues/modifierMV", method="POST") 
+        p 
+            input(type="hidden",name="id", value=modifierM.id )
+            input(type="number",name="nif", placeholder="NIF*" , value=modifierM.nif )
+            input(type="number",name="numStat", placeholder="Numero Statistique*" ,value=modifierM.numStat)
+            input(type="text",name="cin", placeholder="CIN*" , value=modifierM.cin)
+        p
+            input(type="date",name="dateCin", placeholder="Date CIN*", value=modifierM.dateCin)
+            input(type="text",name="lieuDeliv", placeholder="Lieu de délivrance*" , value=modifierM.lieuDeliv)
+            input(type="text",name="nature", placeholder="Nature*" , value=modifierM.nature)
+        p 
+            input(type="text",name="reference", placeholder="Reference*" , value=modifierM.reference)
+            input(type="text",name="raisonSocial", placeholder="Raison Social/Non commercial*" , value=modifierM.raisonSocial)
+            input(type="text",name="adresse", placeholder="Adresse*" , value=modifierM.adresse)
+        p
+            input(type="text",name="pays", placeholder="Pays*" , value=modifierM.pays)
+            input(type="text",name="ville", placeholder="ville*" , value=modifierM.ville)
+            input(type="text",name="exProv", placeholder="Ex-Province*" , value=modifierM.exProv)
+            
+        p
+            input(type="text",name="modePaiem", placeholder="modePaiem*" , value=modifierM.modePaiem)
+            input(type="text",name="montantHorsTva", placeholder="montant hors tva*" , value=modifierM.montantHorsTva)
+            input(type="text",name="tva", placeholder="tva*" , value=modifierM.tva)
+        p
+            button(type="submit") Envoyer

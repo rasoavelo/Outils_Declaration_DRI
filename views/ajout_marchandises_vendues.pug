@@ -1,0 +1,57 @@
+extends layout 
+
+block content 
+    h1 
+        center
+            b  Ajout la declaration de Marchandises Vendues
+    br
+    form(action="/marchandises_vendues/ajoutMV", method="POST" class="form-registration") 
+        div(class="row")
+            div(class="col-lg-4")
+                input(type="chiffre",name="nif", placeholder="NIF*" class="form-control")
+            div(class="col-lg-4")
+                input(type="chiffre",name="numStat", placeholder="Numero Statistique*" class="form-control")
+            div(class="col-lg-4")
+                input(type="chiffre",name="cin", placeholder="CIN*" class="form-control")
+        br
+        div(class="row")
+            div(class="col-lg-4")
+                input(type="date",name="dateCin", placeholder="Date CIN*" class="form-control")
+            div(class="col-lg-4")
+                input(type="text",name="lieuDeliv", placeholder="Lieu de délivrance*" class="form-control")
+            div(class="col-lg-4")
+                input(type="text",name="nature", placeholder="Nature*" class="form-control")
+        br
+        div(class="row")
+            div(class="col-lg-4")
+                input(type="text",name="reference", placeholder="Reference*" class="form-control")
+            div(class="col-lg-4")
+                input(type="text",name="raisonSocial", placeholder="Raison Social/Non commercial*" class="form-control")
+            div(class="col-lg-4")
+                input(type="text",name="adresse", placeholder="Adresse*" class="form-control")
+        br
+        div(class="row")
+            div(class="col-lg-4")
+                input(type="text",name="pays", placeholder="pays*" class="form-control")
+            div(class="col-lg-4")
+                input(type="text",name="ville", placeholder="ville*" class="form-control")
+            div(class="col-lg-4")
+                input(type="text",name="exProv", placeholder="exProv*" class="form-control")
+        br
+        div(class="row")
+            div(class="col-lg-3")
+                input(type="text",name="modePaiem", placeholder="Preciser votre mode paiement*" class="form-control")
+            div(class="col-lg-3")
+                input(type="text",name="natureMarch", placeholder="Saisir votre nature de marchandises*" class="form-control")
+            div(class="col-lg-3")
+                input(type="text",name="comptabilisees", placeholder="comptabilisées*" class="form-control")
+            div(class="col-lg-3")
+                input(type="text",name="versees", placeholder="versées*" class="form-control")
+        br
+        div(class="row")
+            div(class="col-lg-4")
+                button(type="submit" class="btn btn-success") Envoyer
+            div(class="col-lg-7")
+
+            div(class="col-lg-1")
+                button(type="reset" class="btn btn-success") Annuler

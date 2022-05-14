@@ -1,0 +1,50 @@
+extends layout 
+
+block content 
+    if listes 
+        h1 Liste de la declaration d'achat immobilier
+        table.table 
+            thead 
+                tr
+                    th nif
+                    th nuStat 
+                    th cin 
+                    th dateCin 
+                    th lieuDeliv 
+                    th nature 
+                    th reference 
+                    th raisonSocial 
+                    th adresse 
+                    th ville 
+                    th exProvince 
+                    th pays 
+                    th natureAchat 
+                    th comptabilise 
+                    th versee
+                    th Action
+            tbody        
+                for liste in listes 
+                    tr 
+                        td=liste.nif
+                        td=liste.numStat
+                        td=liste.cin
+                        td=liste.dateCin.toDateString()
+                        td=liste.lieuDeliv
+                        td=liste.nature
+                        td=liste.reference
+                        td=liste.raisonSocial
+                        td=liste.adresse
+                        td=liste.ville
+                        td=liste.exProvince
+                        td=liste.pays
+                        td=liste.natureAchatImm
+                        td=liste.comptabilisees
+                        td=liste.versees
+                
+                        td 
+                            a(href="/achat_immobilier/modifier/" + liste.id class="btn btn-success") Modifier  
+                            a(href="/achat_immobilier/supprimer/" + liste.id class="btn btn-success") Supprimer
+
+
+
+

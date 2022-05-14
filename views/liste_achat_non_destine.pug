@@ -1,0 +1,53 @@
+extends layout 
+
+block content 
+    if listes 
+        h1 Liste de la declaration d'achat non destine 
+        .card.shadow.col-1 
+            .card-body 
+                p #{nbAND}
+        table.table.table-responsive 
+            thead 
+                tr
+                    th nif
+                    th nuStat 
+                    th cin 
+                    th dateCin 
+                    th lieuDeliv 
+                    th nature 
+                    th reference 
+                    th raisoSocial 
+                    th adresse 
+                    th ville 
+                    th exProvince 
+                    th pays 
+                    th natureAchatConsommes
+                    th comptabilise 
+                    th versee
+                    th Action
+            tbody        
+                for liste in listes 
+                    tr 
+                        td=liste.nif
+                        td=liste.numStat
+                        td=liste.cin
+                        td=liste.dateCin.toDateString()
+                        td=liste.lieuDeliv
+                        td=liste.nature
+                        td=liste.reference
+                        td=liste.raisonSocial
+                        td=liste.adresse
+                        td=liste.ville
+                        td=liste.exProvince
+                        td=liste.pays
+                        td=liste.naturAchatConsommes
+                        td=liste.comptabilisees
+                        td=liste.versees
+                
+                        td 
+                            a(href="/achat_non_destine/modifierAND/" + liste.id) Modifier 
+                            a(href="/achat_non_destine/supprimerAND/" + liste.id) Supprimer
+
+
+
+

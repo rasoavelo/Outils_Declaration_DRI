@@ -1,0 +1,28 @@
+extends layout 
+
+block content 
+    h1 Modification de la declaration d'achat immobilier
+    form(action="/achat_immobilier/modifier", method="POST") 
+        p 
+            input(type="hidden",name="id", value=modifierA.id )
+            input(type="number",name="nif", placeholder="NIF*" , value=modifierA.nif )
+            input(type="number",name="numStat", placeholder="Numero Statistique*" ,value=modifierA.numStat)
+            input(type="text",name="cin", placeholder="CIN*" , value=modifierA.cin)
+        p
+            input(type="date",name="dateCin", placeholder="Date CIN*", value=modifierA.dateCin)
+            input(type="text",name="lieuDeliv", placeholder="Lieu de délivrance*" , value=modifierA.lieuDeliv)
+            input(type="text",name="nature", placeholder="Nature*" , value=modifierA.nature)
+        p 
+            input(type="text",name="reference", placeholder="Reference*" , value=modifierA.reference)
+            input(type="text",name="raisonSocial", placeholder="Raison Social/Non commercial*" , value=modifierA.raisonSocial)
+            input(type="text",name="adresse", placeholder="Adresse*" , value=modifierA.adresse)
+        p
+            input(type="text",name="ville", placeholder="ville*" , value=modifierA.ville)
+            input(type="text",name="exProvince", placeholder="Ex-Province*" , value=modifierA.exProvince)
+            input(type="text",name="pays", placeholder="Pays*" , value=modifierA.pays)
+        p
+            input(type="text",name="natureAchatImm", placeholder="Nature des achats immobilises *" , value=modifierA.natureAchatImm)
+            input(type="text",name="comptabilisees", placeholder="comptabilisées*" , value=modifierA.comptabilisees)
+            input(type="text",name="versees", placeholder="versées*" , value=modifierA.versees)
+        p
+            button(type="submit") Envoyer

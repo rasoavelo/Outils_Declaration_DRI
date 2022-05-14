@@ -1,0 +1,89 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+  body#page-top
+
+     
+    #wrapper
+      ul.navbar-nav.bg-gradient-success.sidebar.sidebar-dark.accordion#accordionSidabar 
+        a.sidebar-brand.d-flex.align-items-center.justify-content-center(href="#")
+          div.sidebar-brand-text.mx-3 Application ImpotsHM
+
+        hr.sidebar-divider.my-0
+
+        li.nav-item.active 
+          a.nav-link(href="#")
+            span Acceuil
+
+        hr.sidebar-divider
+
+        .sidebar-heading 
+
+        li.nav-item.active 
+          a.nav-link.collapsed(href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo")
+            span Declaration Achat  
+          div#collapseTwo.collapse(aria-labelledby="headingTwo" data-parent="#accordionSidebar")
+            .bg-white.py-2.collapse-inner.rounded 
+              h6.collapse-header Ajout Declaration:
+              a.collapse-item(href="#") Achat Immobilier 
+              a.collapse-item(href="/achat_non_destine/ajoutAND") Achat Non Destine
+
+        li.nav-item.active 
+          a.nav-link.collapsed(href="#" data-toggle="collapse" data-target="#collapseDeclaration" aria-expandend="true" aria-controls="collapseDeclaration")
+            span Autre Declaration 
+          div#collapseDeclaration.collapse(aria-labelledby="headingDeclaration" data-parent="#accordionSidebar")
+            .bg-white.py-2.collapse-inner.rounded 
+              h6.collapse-header Ajout Declaration: 
+              a.collapse-item(href="#") Marchadises Vendues 
+              a.collapse-item(href="#") Sommes Versees/Debours
+
+        hr.sidebar-divider
+                
+        li.nav-item.active 
+          a.nav-link.collapsed(href="#" data-toggle="collapse" data-target="#collapseListes" aria-expanded="true" aria-controls="collapseListes")
+            span Listes 
+          div#collapseListes.collapse(aria-labelledby="headingListes" data-parent="#accordionSidebar")
+            .bg-white.py-2.collapse-inner.rounded 
+              h6.collapse-header Listes Declaration 
+              a.collapse-item(href="#") Achat Immobilier 
+              a.collapse-item(href="#") Achat Non Destine 
+              a.collapse-item(href="#") Marchandises Vendues 
+              a.collapse-item(href="#") Sommes Versees 
+              a.collapse-item(href="#") Debours 
+
+        hr.sidebar-divider   
+
+        li.nav-item.active 
+          a.nav-link(href="/statistique_declaration_communication/statDC")
+            span Graphe 
+        hr.sidebar-divider 
+
+      #content-wrapper.d-flex.flex-column 
+        div#content  
+          nav.navbar.navbar-expand.navbar-light.bg-white.topbar.mb-4.static-top.shadow
+            ul.navbar-nav.ml-auto 
+              li.nav-item.dropdown.no-arrow 
+                a.nav-link.dropdown-toggle#userDropdown(href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                  span.mr-2.d-none.d-lg-inline.text-gray-600.small Admin 
+
+                div.dropdown-menu.dropdown-menu-right.shadow.animated--grw-in(aria-labelledby="userDropdown")
+                  a.dropdown-item(href="#") Profile
+                  div.dropdown-divider
+                  a.dropdown-item(href="#" data-toggle="modal" data-target="#logooutModal") Quitter
+
+          div.container-fluid
+            block content
+            
+
+
+    script(src="/js/jquery.min.js")
+    script(src="/js/bootstrap.min.js")
+    script(src="/js/bootstrap.bundle.min.js")
+    script(src="/js/app.js") 
+    block script   
+    
+      

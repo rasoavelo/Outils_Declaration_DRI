@@ -1,0 +1,103 @@
+extends layout
+
+block content
+  canvas#stat 
+block script 
+  script(src="/js/Chart.min.js")
+  script.
+    $(document).ready(() => {
+      
+      makeChart()
+
+      function makeChart() {
+        console.log('ok');
+        $.get('http://localhost:3000/statistique_declaration_communication/statDC/data', function(data, status) {
+            let mois = []
+            let total = []
+            let color = []
+
+            console.log(data)
+
+            data.achat_immobilier.mois.map(d => {
+              mois.push(d)
+              color.push('#'+Math.floor(Math.random()*(999-111+1))+111+'')
+            })
+
+            data.achat_immobilier.nombre_par_mois.map(d => {
+              total.push(d)
+            })
+
+            const chartData = {
+              labels: mois,
+              datasets: [
+                {
+                  label: 'Statistique de la déclaration',
+                  backgroundColor: color,
+                  color: '#fff',
+                  data: total
+                },
+                {
+                  label: 'Statistique de la communication',
+                  backgroundColor: color,
+                  color: '#fff',
+                  data: total
+                }
+              ]
+            }
+
+            const chartOptions = {
+              responsive:true,
+              scales:{
+                yAxes:[{
+                  ticks:{
+                    min:0
+                  }
+                }]
+              }
+            } 
+
+            const statDC = new Chart($('#stat'), {
+              type: 'bar',
+              data: chartData,
+              options: chartOptions
+            }
+          )
+        })
+      }
+    })
+    //- console.log(stat)
+    //- const chartData = {
+    //-   labels: ['jan','fev','mar','avr','mai','jui'],
+    //-   datasets: [
+    //-     {
+    //-       label: 'Machandises vendues',
+    //-       backgroundColor: '#0f0',
+    //-       data: [0,5,6,7,1,6]
+    //-     },
+    //-     {
+    //-       label: 'Achat non destiné',
+    //-       backgroundColor: '#00f',
+    //-       data: [2,15,6,2,1,9]
+    //-     },
+    //-     {
+    //-       label: 'Achat Immobillier',
+    //-       backgroundColor: '#f00',
+    //-       data: [1,10,16,17,5,4]
+    //-     },
+    //-     {
+    //-       label: 'Sommes Versées',
+    //-       data: [5,12,20,11,4,5]
+    //-     }
+    //-   ]
+    //- }
+
+    //- const options = {
+    //-   responsive: true
+    //- }
+
+    //- const statDC = new Chart($('#stat'), {
+    //-   type: 'bar',
+    //-   data: chart_data,
+    //-   options: options
+    //- });
+    
